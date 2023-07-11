@@ -193,7 +193,8 @@ def calculate_social_distancing(vid_path, net, output_dir, output_vid, ln1):
             output_movie.write(img)
             bird_movie.write(bird_image)
     
-            cv2.imshow('Bird Eye View', bird_image)
+            # cv2.imshow('Bird Eye View', bird_image)
+            cv2.imshow('Social Distance View', img)
             cv2.imwrite(output_dir+"frame%d.jpg" % count, img)
             cv2.imwrite(output_dir+"bird_eye_view/frame%d.jpg" % count, bird_image)
     
@@ -255,7 +256,8 @@ if __name__== "__main__":
     cv2.setMouseCallback("image", get_mouse_points)
     np.random.seed(42)
     
-    calculate_social_distancing(values.video_path, net_yl, output_dir, output_vid, ln1)
+    # calculate_social_distancing(values.video_path, net_yl, output_dir, output_vid, ln1)
+    calculate_social_distancing(0, net_yl, output_dir, output_vid, ln1)
 
 
 
