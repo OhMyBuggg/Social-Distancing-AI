@@ -248,7 +248,7 @@ if __name__== "__main__":
 
     net_yl = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
     ln = net_yl.getLayerNames()
-    ln1 = [ln[i - 1] for i in net_yl.getUnconnectedOutLayers()]
+    ln1 = [ln[i[0] - 1] for i in net_yl.getUnconnectedOutLayers()]
 
     # set mouse callback 
 
