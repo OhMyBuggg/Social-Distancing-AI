@@ -247,6 +247,8 @@ if __name__== "__main__":
     configPath = model_path + "yolov3.cfg"
 
     net_yl = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
+    net_yl.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
+    net_yl.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA)
     ln = net_yl.getLayerNames()
     ln1 = [ln[i[0] - 1] for i in net_yl.getUnconnectedOutLayers()]
 
